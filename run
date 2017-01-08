@@ -1,0 +1,30 @@
+// Motor A
+int enableA = 4;
+int pinA1 = 5;
+int pinA2 = 6;
+
+// Motor B
+int enableB = 9;
+int pinB1 = 7;
+int pinB2 = 8;
+
+void setup() {
+  // put your setup code here, to run once:
+  pinMode (enableA, OUTPUT);
+  pinMode (pinA1, OUTPUT);
+  pinMode (pinA2, OUTPUT);
+ 
+  digitalWrite (enableA, HIGH);
+  digitalWrite (pinA2, LOW);
+  for(int i = 100; i <= 250; i += 10) {
+    analogWrite (pinA1, i);
+    delay(1000);
+  }
+  digitalWrite (enableA, LOW);
+
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  
+}
