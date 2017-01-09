@@ -16,18 +16,24 @@ Motor::~Motor(){
   digitalWrite(_enable, LOW);
 }
 
-// Convert language input of direction to usable output
+// Convert language input of direction to usable output (TODO: move somewhere)
 int * _directions(String direction){
   static int dir[2];
-  if(direction == "fwd" || direction == "left"){
+  if(direction == "fwd" || direction == "right"){
     dir[0] = HIGH;
     dir[1] = LOW;
   }
-  else if(direction == "bwd" || direction == "right"){
+  else if(direction == "bwd" || direction == "left"){
     dir[0] = LOW;
     dir[1] = HIGH;
   }
   return dir;
+}
+
+void Motor::setSpeed(int speed){
+  _speed = speed;
+
+  analogWrite((_direction == "fwd" || "right") ? _pin1 : _pin2, speed);
 }
 
 // Set direction of the motor, using language
