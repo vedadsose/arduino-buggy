@@ -25,7 +25,13 @@ void setup() {
 void loop() {
   // Listen to serial port
   if (Serial.available() > 0) {
-    String incoming = Serial.readString();
+    String incoming = "";
+    char character;
+
+    while(Serial.available()) {
+      character = Serial.read();
+      incoming.concat(character);
+    }
 
     if(incoming == "fwd" || incoming == "bwd"){
       drive.setDirection(incoming);
@@ -35,12 +41,8 @@ void loop() {
       steer.setDirection(incoming);
     }
 
-    else if(incoming == "disable steering"){
+    else if(incoming == "straight"){
       steer.disable();
-    }
-
-    else if(incoming == "disable driving"){
-      drive.disable();
     }
 
     else if(incoming == "enable steering"){
