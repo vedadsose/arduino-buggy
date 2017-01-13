@@ -23,11 +23,11 @@ Motor::~Motor(){
 // Convert language input of direction to usable output (TODO: move somewhere)
 int * _directions(String direction){
   static int dir[2];
-  if(direction == "fwd" || direction == "right"){
+  if(direction == "right"){ // or fwd...
     dir[0] = HIGH;
     dir[1] = LOW;
   }
-  else if(direction == "bwd" || direction == "left"){
+  else if(direction == "left"){ //or bwd...
     dir[0] = LOW;
     dir[1] = HIGH;
   }

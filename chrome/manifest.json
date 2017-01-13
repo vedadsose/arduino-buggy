@@ -1,0 +1,23 @@
+{
+  "name": "Buggy",
+  "description": "Car controller",
+  "author": "Harun Smrkovic & Vedad Sose",
+  "version": "1.0.9",
+  "permissions": ["serial", "experimental"],
+  "bluetooth": {
+    "uuids": [ "00001101-0000-1000-8000-00805f9b34fb" ],
+    "socket": true
+  },
+  "app": {
+    "background": {
+      "scripts": ["background.js"]
+    }
+  },
+  "icons": { "16": "icons/icon16.png",
+             "48": "icons/icon48.png",
+            "128": "icons/icon128.png" },
+
+  "manifest_version": 2,
+  "offline_enabled": true,
+  "minimum_chrome_version": "33"
+}

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="msapplication-tap-highlight" content="no" />
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+	<title>Involt</title>
+	<script src="jquery/jquery-2.1.0.min.js"></script>
+	<script src="communicate.js"></script>
+	<style>
+	#devices {
+		width: 300px;
+		height: 500px;
+		background: #b1b1b1;
+	}
+
+	#devices > div {
+		padding: 10px;
+		border-bottom: 1px dashed #000;
+	}
+	</style>
+</head>
+
+<body>
+
+<div id="devices"></div>
+<div id="controls">
+	<label for="drive">Drive <span class="debug"></span><br>
+		<input id="drive" name="drive" type="range" min="-200" max="200">
+	</label>
+	<br><br>
+	<label for="steer">Steer <span class="debug"></span><br>
+		<input id="steer" name="steer" type="range" min="" max="">
+	</label>
+</div>
+
+</body>
+
+</html>
